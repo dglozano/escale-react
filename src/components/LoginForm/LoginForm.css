@@ -1,28 +1,17 @@
-.login-form {
-  max-width: 450px;
-}
-
-.login-form .image {
-  margin-bottom: 0;
-}
-
-
-.login-form .header {
-  margin-top: 1rem;
-}
-
-
-.login-form .divider {
+#login-grid {
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
 }
 
-.login-form .segment {
-  background: #fbfbfb;
+#login-grid>.column {
+  max-width: 700px;
 }
 
-@media screen and (max-width: 320px) {
-  #login-form-logo {
-    display: none;
-  }
+#login-segment button {
+  margin-left: auto;
+  display: inherit;
+}
+
+#login-segment {
+  border-radius: 16px;
 }

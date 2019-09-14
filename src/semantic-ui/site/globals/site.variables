@@ -2,6 +2,66 @@
      User Global Variables
 *******************************/
 
+/*-------------------
+    Brand Colors
+--------------------*/
 @primaryColor   : #03a9f4;
 @secondaryColor : #1de9b6;
-@pageBackground : #78c3ff;
+@pageBackground : #011f2c;
+
+/*-------------------
+    Border
+--------------------*/
+
+@relativeBorderRadius: @relative4px;
+@absoluteBorderRadius: @4px;
+
+/*-------------------
+       Fonts
+--------------------*/
+
+@fontName          : 'Open Sans';
+@googleFontSize    : '@{@googleFontSize}:900';
+@headerFont        : @fontName, 'Roboto', Arial, sans-serif;
+@pageFont          : 'Roboto', @fontName, Arial, sans-serif;
+
+/*--------------
+  Page Heading
+---------------*/
+
+@headerFontWeight  : 800;
+
+@h1 : unit((56 / 14), rem);
+@h2 : unit((44 / 14), rem);
+@h3 : unit((34 / 14), rem);
+@h4 : unit((24 / 14), rem);
+@h5 : unit((16 / 14), rem);
+
+/*-------------------
+    Focused Input
+--------------------*/
+
+/* Used on inputs, textarea etc */
+@focusedFormBorderColor: @primaryColor;
+
+/* Used on dropdowns, other larger blocks */
+@focusedFormMutedBorderColor: #96C8DA;
+
+/*-------------------
+       Links
+--------------------*/
+
+@linkColor           : #014462;
+@linkUnderline       : none;
+@linkHoverColor      : darker(saturate(@linkColor, 20), 15, relative);
+@linkHoverUnderline  : underline;
+
+/*-------------------
+     Breakpoints
+--------------------*/
+
+@mobileBreakpoint            : 320px;
+@tabletBreakpoint            : 768px;
+@computerBreakpoint          : 992px;
+@largeMonitorBreakpoint      : 1200px;
+@widescreenMonitorBreakpoint : 1920px;

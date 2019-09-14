@@ -1,0 +1,10 @@
+#flex-wrapper {
+    display: flex;
+    min-height: 100%;
+    flex-direction: column;
+}
+
+#flex-content-wrapper {
+    margin-bottom: 2rem;
+    flex: 1;
+}
