@@ -7,7 +7,7 @@
 --------------------*/
 @primaryColor   : #03a9f4;
 @secondaryColor : #1de9b6;
-@pageBackground : #011f2c;
+@pageBackground : #fafafa;
 
 /*-------------------
     Border
@@ -36,6 +36,8 @@
 @h3 : unit((34 / 14), rem);
 @h4 : unit((24 / 14), rem);
 @h5 : unit((16 / 14), rem);
+
+@headerBottomMargin : @headerTopMargin ;
 
 /*-------------------
     Focused Input

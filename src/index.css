@@ -12,6 +12,11 @@ body {
   height: 100%;
 }
 
+.container-padding {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;

@@ -9,7 +9,8 @@ import {
   Message,
   Header,
   Segment,
-  Responsive
+  Responsive,
+  Container
 } from "semantic-ui-react";
 
 class LoginForm extends React.Component {
@@ -100,81 +101,84 @@ class LoginForm extends React.Component {
       gridWitdh <= Responsive.onlyComputer.minWidth;
 
     return (
-      <Responsive
-        id="login-grid"
-        as={Grid}
-        verticalAlign="middle"
-        centered
-        columns={1}
-        fireOnMount
-        onUpdate={this.handleOnGridWidthChange}
-      >
-        <Grid.Row>
-          <Header
-            id="login-header"
-            inverted
-            as={isNarrowerThanComputer ? "h3" : "h2"}
+      <Segment fluid id="login-container">
+        <Container>
+          <Responsive
+            as={Grid}
+            verticalAlign="middle"
+            centered
+            columns={1}
+            fireOnMount
+            onUpdate={this.handleOnGridWidthChange}
           >
-            Iniciar Sesión
-            <Header.Subheader>
-              Si es tu primera vez, en el mail de bienvenida encontrarás la
-              contraseña inicial.
-            </Header.Subheader>
-          </Header>
-        </Grid.Row>
-        <Grid.Column textAlign="center">
-          <Segment
-            loading={this.state._loading}
-            id="login-segment"
-            textAlign="left"
-            raised
-            padded="very"
-          >
-            <Form size="large" onSubmit={this.handleOnSubmit}>
-              <Form.Input
-                fluid
-                icon="at"
-                iconPosition="left"
-                label="Email"
-                placeholder="juanperez@escale.com.ar"
-                name="email"
-                error={this.state.emailError}
-                onChange={this.handleOnChange}
-              />
-              <Form.Input
-                fluid
-                icon="lock"
-                iconPosition="left"
-                placeholder="**********"
-                label="Contraseña"
-                type="password"
-                name="password"
-                error={this.state.passwordError}
-                onChange={this.handleOnChange}
-              />
+            <Grid.Row>
+              <Header
+                id="login-header"
+                inverted
+                as={isNarrowerThanComputer ? "h3" : "h2"}
+              >
+                Iniciar Sesión
+                <Header.Subheader>
+                  Si es tu primera vez, en el mail de bienvenida encontrarás la
+                  contraseña inicial.
+                </Header.Subheader>
+              </Header>
+            </Grid.Row>
+            <Grid.Column textAlign="center">
+              <Segment
+                loading={this.state._loading}
+                id="login-segment"
+                textAlign="left"
+                raised
+                padded="very"
+              >
+                <Form size="large" onSubmit={this.handleOnSubmit}>
+                  <Form.Input
+                    fluid
+                    icon="at"
+                    iconPosition="left"
+                    label="Email"
+                    placeholder="juanperez@escale.com.ar"
+                    name="email"
+                    error={this.state.emailError}
+                    onChange={this.handleOnChange}
+                  />
+                  <Form.Input
+                    fluid
+                    icon="lock"
+                    iconPosition="left"
+                    placeholder="**********"
+                    label="Contraseña"
+                    type="password"
+                    name="password"
+                    error={this.state.passwordError}
+                    onChange={this.handleOnChange}
+                  />
 
-              <Form.Field>
-                <a href="/">¿Olvidaste tu contraseña?</a>
-              </Form.Field>
+                  <Form.Field>
+                    <a href="/">¿Olvidaste tu contraseña?</a>
+                  </Form.Field>
 
-              <Message
-                error
-                visible={!!this.state.loginError}
-                onDismiss={() => this.setState({ loginError: false })}
-                header="Ups!"
-                content={this.state.loginError}
-              />
+                  <Message
+                    error
+                    visible={!!this.state.loginError}
+                    onDismiss={() => this.setState({ loginError: false })}
+                    header="Ups!"
+                    content={this.state.loginError}
+                  />
 
-              <Form.Button
-                fluid={isNarrowerThanTablet}
-                primary
-                size="large"
-                content="Iniciar Sesión"
-              />
-            </Form>
-          </Segment>
-        </Grid.Column>
-      </Responsive>
+                  <Form.Button
+                    fluid={isNarrowerThanTablet}
+                    primary
+                    size="large"
+                    content="Iniciar Sesión"
+                  />
+                </Form>
+              </Segment>
+            </Grid.Column>
+          </Responsive>
+        </Container>
+      </Segment>
     );
   }
 }
