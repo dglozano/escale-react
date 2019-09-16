@@ -2,8 +2,8 @@ import React, { Fragment } from "react";
 import "./App.css";
 import LoginForm from "../LoginForm/LoginForm";
 import { Container } from "semantic-ui-react";
-import Menu from "../Menu/Menu";
 import Footer from "../Footer/Footer";
+import HeaderMenu from "../HeaderMenu/HeaderMenu";
 
 class App extends React.Component {
   onLoginSuccess = response => {
@@ -15,7 +15,7 @@ class App extends React.Component {
     return (
       <Fragment>
         <div id="flex-wrapper">
-          <Menu />
+          <HeaderMenu />
           <div id="flex-content-wrapper">
             <Container>
               <LoginForm onLoginSuccess={this.onLoginSuccess} />

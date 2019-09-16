@@ -1,12 +1,12 @@
 import React from "react";
-import "./Menu.css";
+import "./HeaderMenu.css";
 import logo from "../../assets/images/logo.svg";
 import { Container, Image, Menu, Header, Button } from "semantic-ui-react";
 
 export default () => (
-  <Menu id="header-menu" inverted borderless>
+  <Menu id="header-menu" inverted borderless fixed="top">
     <Container>
-      <Menu.Item>
+      <Menu.Item as={Button}>
         <div id="menu-logo">
           <Image size="mini" src={logo} alt="logo" />
           <Header inverted as="h4">

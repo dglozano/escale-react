@@ -7,4 +7,5 @@
 #flex-content-wrapper {
     margin-bottom: 2rem;
     flex: 1;
+    padding-top: 65px;
 }
