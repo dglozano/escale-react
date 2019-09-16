@@ -5,6 +5,7 @@
   "dependencies": {
     "axios": "^0.19.0",
     "less": "^3.10.3",
+    "prop-types": "^15.7.2",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-router-dom": "^5.0.1",
@@ -13,7 +14,8 @@
     "validator": "^11.1.0"
   },
   "scripts": {
-    "start": "craco start",
+    "start": "REACT_APP_ENV=dev craco start",
+    "start:prod": "REACT_APP_ENV=prod craco start",
     "build": "craco build",
     "test": "craco test",
     "eject": "craco eject"
