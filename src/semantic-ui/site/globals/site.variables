@@ -29,7 +29,7 @@
   Page Heading
 ---------------*/
 
-@headerFontWeight  : 800;
+@headerFontWeight  : 700;
 
 @h1 : unit((56 / 14), rem);
 @h2 : unit((44 / 14), rem);

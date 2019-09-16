@@ -1,5 +1,7 @@
 import React from "react";
+import PropTypes from "prop-types";
 import isEmail from "validator/lib/isEmail";
+import { client } from "../../apiClient.js";
 import "./LoginForm.css";
 import {
   Form,
@@ -17,6 +19,7 @@ class LoginForm extends React.Component {
     emailError: false,
     passwordError: false,
     loginError: false,
+    _loading: false,
     _gridWidth: {}
   };
 
@@ -29,11 +32,42 @@ class LoginForm extends React.Component {
     const { email, password } = this.state;
 
     if (this.validateInput(email, password)) {
-      //show loader, make call
-      this.setState({
-        loginError: "Las credenciales ingresadas son incorrectas."
-      });
+      this.login(email, password);
     }
+  };
+
+  login = (email, password) => {
+    this.setState({ _loading: true });
+
+    client
+      .sendLoginCredentials(email, password)
+      .then(this.onLoginSuccess)
+      .catch(this.showLoginError)
+      .finally(() => this.setState({ _loading: false }));
+  };
+
+  onLoginSuccess = response => {
+    this.setState({
+      loginError: false
+    });
+    this.props.onLoginSuccess(response);
+  };
+
+  showLoginError = error => {
+    let errorString = "Undefined error.";
+    if (!!error.response) {
+      switch (error.response.status) {
+        case 401:
+          errorString = "Las credenciales ingresadas son incorrectas.";
+          break;
+        default:
+          errorString =
+            "No pudimos contactarnos con el servidor. Intenta de nuevo más tarde.";
+      }
+    }
+    this.setState({
+      loginError: errorString
+    });
   };
 
   validateInput = (email, password) => {
@@ -76,7 +110,11 @@ class LoginForm extends React.Component {
         onUpdate={this.handleOnGridWidthChange}
       >
         <Grid.Row>
-          <Header inverted as={isNarrowerThanComputer ? "h3" : "h2"}>
+          <Header
+            id="login-header"
+            inverted
+            as={isNarrowerThanComputer ? "h3" : "h2"}
+          >
             Iniciar Sesión
             <Header.Subheader>
               Si es tu primera vez, en el mail de bienvenida encontrarás la
@@ -85,7 +123,13 @@ class LoginForm extends React.Component {
           </Header>
         </Grid.Row>
         <Grid.Column textAlign="center">
-          <Segment id="login-segment" textAlign="left" raised padded="very">
+          <Segment
+            loading={this.state._loading}
+            id="login-segment"
+            textAlign="left"
+            raised
+            padded="very"
+          >
             <Form size="large" onSubmit={this.handleOnSubmit}>
               <Form.Input
                 fluid
@@ -134,5 +178,9 @@ class LoginForm extends React.Component {
     );
   }
 }
+
+LoginForm.propTypes = {
+  onLoginSuccess: PropTypes.func
+};
 
 export default LoginForm;

@@ -7,6 +7,14 @@
   max-width: 700px;
 }
 
+#login-header {
+  letter-spacing: 2px;
+}
+
+#login-header>.sub {
+  letter-spacing: normal;
+}
+
 #login-segment button {
   margin-left: auto;
   display: inherit;
