@@ -20,12 +20,8 @@ class LoginForm extends React.Component {
     emailError: false,
     passwordError: false,
     loginError: false,
-    _loading: false,
-    _gridWidth: {}
+    _loading: false
   };
-
-  handleOnGridWidthChange = (e, { width }) =>
-    this.setState({ _gridWidth: width });
 
   handleOnChange = (e, { name, value }) => this.setState({ [name]: value });
 
@@ -94,23 +90,16 @@ class LoginForm extends React.Component {
   };
 
   render() {
-    const gridWitdh = this.state._gridWidth;
+    const _screenWidth = this.props._screenWidth;
     const tabletBreakpoint = 600;
-    const isNarrowerThanTablet = gridWitdh <= tabletBreakpoint;
+    const isNarrowerThanTablet = _screenWidth <= tabletBreakpoint;
     const isNarrowerThanComputer =
-      gridWitdh <= Responsive.onlyComputer.minWidth;
+      _screenWidth <= Responsive.onlyComputer.minWidth;
 
     return (
       <Segment fluid id="login-container">
         <Container>
-          <Responsive
-            as={Grid}
-            verticalAlign="middle"
-            centered
-            columns={1}
-            fireOnMount
-            onUpdate={this.handleOnGridWidthChange}
-          >
+          <Grid verticalAlign="middle" centered columns={1}>
             <Grid.Row>
               <Header
                 id="login-header"
@@ -176,7 +165,7 @@ class LoginForm extends React.Component {
                 </Form>
               </Segment>
             </Grid.Column>
-          </Responsive>
+          </Grid>
         </Container>
       </Segment>
     );
@@ -184,7 +173,8 @@ class LoginForm extends React.Component {
 }
 
 LoginForm.propTypes = {
-  onLoginSuccess: PropTypes.func
+  onLoginSuccess: PropTypes.func,
+  _screenWidth: PropTypes.number
 };
 
 export default LoginForm;
