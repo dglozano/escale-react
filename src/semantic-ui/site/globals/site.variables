@@ -20,7 +20,7 @@
        Fonts
 --------------------*/
 
-@fontName          : 'Open Sans';
+@fontName          : 'Changa One';
 @googleFontSize    : '@{@googleFontSize}:900';
 @headerFont        : @fontName, 'Roboto', Arial, sans-serif;
 @pageFont          : 'Roboto', @fontName, Arial, sans-serif;
@@ -29,7 +29,7 @@
   Page Heading
 ---------------*/
 
-@headerFontWeight  : 700;
+@headerFontWeight  : 900;
 
 @h1 : unit((56 / 14), rem);
 @h2 : unit((44 / 14), rem);
