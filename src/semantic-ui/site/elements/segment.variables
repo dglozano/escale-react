@@ -1,0 +1,9 @@
+/*******************************
+    User Variable Overrides
+*******************************/
+
+@basicBackground: #f8f8f8;
+@borderRadius: 0;
+
+/* Raised */
+@raisedBoxShadow: -1px -3px 6px 2px rgba(0, 12, 18, 0.42);

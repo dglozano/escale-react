@@ -1,0 +1,7 @@
+/*******************************
+    User Variable Overrides
+*******************************/
+
+@mobileMinimumGutter: 0em;
+@mobileWidth: auto;
+@mobileGutter: 2em;

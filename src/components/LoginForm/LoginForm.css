@@ -1,0 +1,26 @@
+#login-container {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  background-color: #011f2c;
+}
+
+#login-container .grid>.column {
+  max-width: 700px;
+}
+
+#login-header {
+  letter-spacing: 3px;
+}
+
+#login-header>.sub {
+  letter-spacing: normal;
+}
+
+#login-segment button {
+  margin-left: auto;
+  display: inherit;
+}
+
+#login-segment {
+  border-radius: 16px;
+}

@@ -1,0 +1,20 @@
+/*******************************
+    User Variable Overrides
+*******************************/
+
+@boxShadow: @subtleShadow;
+@borderRadius: 0px;
+@headerWeight: 600;
+
+/*--------------
+   Variations
+---------------*/
+
+/* Inverted */
+@invertedBackground: #012231;
+@invertedBoxShadow: none;
+@invertedBorder: 0px solid transparent;
+@invertedHeaderBackground: transparent;
+
+@invertedItemBackground: transparent;
+@invertedItemTextColor: @invertedTextColor;
